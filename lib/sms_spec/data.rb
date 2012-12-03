@@ -18,6 +18,10 @@ module SmsSpec
       @@messages ||= []
     end
 
+    def self.find(sid)
+      @@messages.select { |m| m.sid == sid }.first
+    end
+
     def self.set_current_number(number)
       @@current_number = sanitize number
     end
