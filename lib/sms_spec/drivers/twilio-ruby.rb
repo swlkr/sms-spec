@@ -8,8 +8,8 @@ class Twilio::REST::Client
     include SmsSpec::Helpers
 
     def create(opts={})
-      to = "+1#{opts[:to]}"
-      from = "+1#{opts[:from]}"
+      to = opts[:to]
+      from = opts[:from]
       body = opts[:body]
       sid = "SM#{SecureRandom.uuid.gsub(/-/, '')}"
       date_sent = Time.now.strftime('%H:%M:%S %Z %Y-%m-%d')
